@@ -5,16 +5,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
 
-class MainActivity : AppCompatActivity() {
-
+class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_about)
 
-        val buttonNavigate = findViewById<Button>(R.id.aboutButton)
+        val buttonNavigate = findViewById<Button>(R.id.regresarButton)
 
         buttonNavigate.setOnClickListener{
-            val intentAbout = Intent(this, AboutActivity::class.java)
+            val intentAbout = Intent(this, MainActivity::class.java)
             startActivity(intentAbout)
         }
     }
