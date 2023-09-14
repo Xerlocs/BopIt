@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">BopIt</string>
-    <string name="app_description">Este proyecto es uno piloto del juego BopIt para celular, hecho a partir de un proyecto de la Universidad de Talca</string>
+    <string name="titulo">BOP IT!!!</string>
+    <string name="titulo_about">ABOUT</string>
+    <string name="about">About</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="regresar">Regresar</string>
+    <string name="app_description">Hecho por Diego Valderrama. \nEste proyecto es uno piloto del juego BopIt para celular, hecho a partir de un proyecto de la Universidad de Talca</string>
 
 </resources>
