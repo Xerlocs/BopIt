@@ -4,6 +4,7 @@
     //titulos
     <string name="titulo">BOP IT!!!</string>
     <string name="titulo_about">ABOUT</string>
+    <string name="titulo_preference">PREFERENCIAS</string>
 
     //botones
     <string name="about">About</string>
@@ -17,18 +18,21 @@
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="Datos_header">Datos del jugador</string>
+    <string name="Personalizar_header">Personalizacion del juego</string>
+    <string name="Admin_header">Administracion general</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    //Datos settings
+    <string name="name_title">Tu nombre</string>
+    <string name="puntaje_title">Guardar puntaje mas alto</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    //Personalizar settings
+    <string name="color_title">Color del juego</string>
+    <string name="volumen_title">Volumen del juego</string>
+    <string name="intrucciones_title">Mostrar intrucciones</string>
+    <string name="botones_title">Tamaño de botones y texto</string>
+
+    //Admin settings
+    <string name="valores_title">¿Restablecer los valores predeterminados?</string>
 
 </resources>

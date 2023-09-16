@@ -1,12 +1,49 @@
 <resources>
-    <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+    <!-- color Preference -->
+    <string-array name="color_entries">
+        <item>Claro</item>
+        <item>Oscuro</item>
     </string-array>
 
     <string-array name="reply_values">
         <item>reply</item>
         <item>reply_all</item>
+    </string-array>
+
+    <!-- volumen Preference -->
+    <string-array name="volumen_entries">
+        <item>Alto</item>
+        <item>Medio</item>
+        <item>Bajo</item>
+    </string-array>
+
+    <string-array name="volumen_values">
+        <item>100</item>
+        <item>50</item>
+        <item>0</item>
+    </string-array>
+
+    <!-- instrucciones Preference -->
+    <string-array name="instrucciones_entries">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="instru_values">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+    <!-- tamaño Preference -->
+    <string-array name="tamaño_entries">
+        <item>Grande</item>
+        <item>Mediano</item>
+        <item>Chico</item>
+    </string-array>
+
+    <string-array name="tamaño_values">
+        <item>100</item>
+        <item>50</item>
+        <item>0</item>
     </string-array>
 </resources>

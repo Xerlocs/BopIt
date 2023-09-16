@@ -11,10 +11,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val buttonNavigate = findViewById<Button>(R.id.aboutButton)
+        //About
+        val aboutNavigate = findViewById<Button>(R.id.aboutButton)
 
-        buttonNavigate.setOnClickListener{
+        aboutNavigate.setOnClickListener{
             val intentAbout = Intent(this, AboutActivity::class.java)
+            startActivity(intentAbout)
+        }
+
+        //Preferencias
+        val prefNavigate = findViewById<Button>(R.id.prefButton)
+
+        prefNavigate.setOnClickListener{
+            val intentAbout = Intent(this, SettingsActivity::class.java)
             startActivity(intentAbout)
         }
     }
