@@ -26,5 +26,14 @@ class MainActivity : AppCompatActivity() {
             val intentAbout = Intent(this, SettingsActivity::class.java)
             startActivity(intentAbout)
         }
+
+        //sonidos
+        val sonidosNavigate = findViewById<Button>(R.id.sonidosButton)
+
+        sonidosNavigate.setOnClickListener{
+            val intentAbout = Intent(this, Sonidos::class.java)
+            startActivity(intentAbout)
+        }
+
     }
 }
