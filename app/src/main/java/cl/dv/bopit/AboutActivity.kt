@@ -10,11 +10,5 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        val buttonNavigate = findViewById<Button>(R.id.regresarButton)
-
-        buttonNavigate.setOnClickListener{
-            val intentAbout = Intent(this, MainActivity::class.java)
-            startActivity(intentAbout)
-        }
     }
 }
