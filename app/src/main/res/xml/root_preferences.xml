@@ -20,7 +20,7 @@
             app:defaultValue="reply"
             app:entries="@array/color_entries"
             app:entryValues="@array/reply_values"
-            app:key="reply"
+            app:key="color"
             app:title="@string/color_title"
             app:useSimpleSummaryProvider="true" />
 
@@ -28,7 +28,7 @@
             app:defaultValue="100"
             app:entries="@array/volumen_entries"
             app:entryValues="@array/volumen_values"
-            app:key="100"
+            app:key="volumen"
             app:title="@string/volumen_title"
             app:useSimpleSummaryProvider="true" />
 
@@ -36,15 +36,15 @@
             app:defaultValue="true"
             app:entries="@array/instrucciones_entries"
             app:entryValues="@array/instru_values"
-            app:key="true"
+            app:key="instrucciones"
             app:title="@string/intrucciones_title"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
-            app:defaultValue="Mediano"
+            app:defaultValue="50"
             app:entries="@array/tamaño_entries"
             app:entryValues="@array/tamaño_values"
-            app:key="Mediano"
+            app:key="tamaño"
             app:title="@string/botones_title"
             app:useSimpleSummaryProvider="true" />
 

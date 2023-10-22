@@ -57,7 +57,7 @@ class Sonidos : AppCompatActivity() {
     override fun onResume(){
         super.onResume()
         if(!mediaPlayer3.isPlaying){
-            mediaPlayer3.pause()
+            mediaPlayer3.start()
         }
     }
 }
