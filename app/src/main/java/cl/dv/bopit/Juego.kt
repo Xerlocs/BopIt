@@ -90,12 +90,12 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener{
         velocityX: Float,
         velocityY: Float
     ): Boolean {
-        gesture.text = "Deslizado"
+        gesture.setText(R.string.desliza)
         return true
     }
 
     override fun onLongPress(event: MotionEvent) {
-        gesture.text = "Presionando"
+        gesture.setText(R.string.longpress)
     }
 
     override fun onScroll(

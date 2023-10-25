@@ -44,4 +44,8 @@
     //texto ejemplo
     <string name="textoejemplo">Jugemos</string>
 
+    //texto gesture
+    <string name="desliza">Deslizado</string>
+    <string name="longpress">Presionando</string>
+
 </resources>

@@ -42,16 +42,16 @@
 
   <TextView
       android:id="@+id/gestureText"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="272dp"
+      android:layout_width="276dp"
+      android:layout_height="90dp"
+      android:layout_marginTop="276dp"
       android:text="@string/textoejemplo"
       android:textAlignment="center"
       android:textColor="@color/azul_bonito"
-      android:textSize="34sp"
+      android:textSize="60sp"
       android:textStyle="bold"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.509"
+      app:layout_constraintHorizontal_bias="0.535"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
