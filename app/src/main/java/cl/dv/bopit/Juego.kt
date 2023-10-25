@@ -1,25 +1,37 @@
 package cl.dv.bopit
 
-import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.media.MediaPlayer
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.widget.Button
+import android.widget.TextView
+import androidx.core.view.GestureDetectorCompat
 
-class Sonidos : AppCompatActivity() {
+class Juego : AppCompatActivity(), GestureDetector.OnGestureListener{
 
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var mediaPlayer2: MediaPlayer
     private lateinit var mediaPlayer3: MediaPlayer
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var mDetector: GestureDetectorCompat
+
+    private lateinit var gesture: TextView
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sonidos)
+        setContentView(R.layout.activity_juego)
+
+        mDetector = GestureDetectorCompat(this, this)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.victory_theme)
         mediaPlayer2 = MediaPlayer.create(this, R.raw.lose_theme)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.relaxe_theme)
 
+        gesture = findViewById(R.id.gestureText)
+
         mediaPlayer3.start()
+        mediaPlayer3.isLooping
 
         val victoria = findViewById<Button>(R.id.victoriaButton)
         victoria.setOnClickListener{
@@ -43,6 +55,14 @@ class Sonidos : AppCompatActivity() {
                 mediaPlayer3.pause()
             }
         }
+
+    }
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        return if (mDetector.onTouchEvent(event)) {
+            true
+        } else {
+            super.onTouchEvent(event)
+        }
     }
 
     override fun onPause(){
@@ -59,5 +79,38 @@ class Sonidos : AppCompatActivity() {
         if(!mediaPlayer3.isPlaying){
             mediaPlayer3.start()
         }
+    }
+    override fun onDown(event: MotionEvent): Boolean {
+        return true
+    }
+
+    override fun onFling(
+        event1: MotionEvent,
+        event2: MotionEvent,
+        velocityX: Float,
+        velocityY: Float
+    ): Boolean {
+        gesture.text = "Deslizado"
+        return true
+    }
+
+    override fun onLongPress(event: MotionEvent) {
+        gesture.text = "Presionando"
+    }
+
+    override fun onScroll(
+        event1: MotionEvent,
+        event2: MotionEvent,
+        distanceX: Float,
+        distanceY: Float
+    ): Boolean {
+        return true
+    }
+
+    override fun onShowPress(event: MotionEvent) {
+    }
+
+    override fun onSingleTapUp(event: MotionEvent): Boolean {
+        return true
     }
 }

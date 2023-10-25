@@ -10,7 +10,7 @@
     <string name="about">About</string>
     <string name="preferencias">Preferencias</string>
     <string name="regresar">Regresar</string>
-    <string name="sonidos">Sonidos</string>
+    <string name="juego">Jugar</string>
 
     //texto
     <string name="app_description">Hecho por Diego Valderrama. \nEste proyecto es uno piloto del juego BopIt para celular, hecho a partir de un proyecto de la Universidad de Talca</string>
@@ -39,6 +39,9 @@
     //Sonidos
     <string name="victoria">Sonido de victoria</string>
     <string name="perder">Sonido de perder</string>
-    <string name="fondo">Sonido de fondo</string>
+    <string name="fondo">Pausar / Reanudar</string>
+
+    //texto ejemplo
+    <string name="textoejemplo">Jugemos</string>
 
 </resources>

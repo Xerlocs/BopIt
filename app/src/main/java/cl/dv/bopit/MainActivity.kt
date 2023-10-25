@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         //sonidos
-        val sonidosNavigate = findViewById<Button>(R.id.sonidosButton)
+        val gameNavigate = findViewById<Button>(R.id.juegoButton)
 
-        sonidosNavigate.setOnClickListener{
-            val intentAbout = Intent(this, Sonidos::class.java)
+        gameNavigate.setOnClickListener{
+            val intentAbout = Intent(this, Juego::class.java)
             startActivity(intentAbout)
         }
 
