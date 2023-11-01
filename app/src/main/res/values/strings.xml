@@ -43,6 +43,7 @@
 
     //texto ejemplo
     <string name="textoejemplo">Jugemos</string>
+    <string name="cuadrito">Giremos</string>
 
     //texto gesture
     <string name="desliza">Deslizado</string>
