@@ -1,6 +1,5 @@
 package cl.dv.bopit
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.graphics.Color
@@ -11,11 +10,14 @@ import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.media.MediaPlayer
+import android.os.Handler
+import android.os.Looper
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.view.GestureDetectorCompat
+import kotlin.random.Random
 
 class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEventListener{
 
@@ -26,10 +28,22 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
     private lateinit var mDetector: GestureDetectorCompat
 
     private lateinit var gesture: TextView
-    private lateinit var square: TextView
 
     private var sensorManager: SensorManager? = null
     private var accelerometer: Sensor? = null
+
+    private val handler = Handler(Looper.getMainLooper())
+
+    private lateinit var puntos: TextView
+    private var puntaje = 0
+
+    val randomNum = List(10) { Random.nextInt(0, 3) }
+
+    private val instrucciones = listOf(
+        "Desliza!!",
+        "Agita!!",
+        "Manten precionado!!"
+    )
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +55,10 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
         mediaPlayer2 = MediaPlayer.create(this, R.raw.lose_theme)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.relaxe_theme)
 
-        gesture = findViewById(R.id.gestureText)
-        square = findViewById(R.id.tv_square)
+        gesture = findViewById(R.id.gestureText) //Intrucciones
+        puntos = findViewById(R.id.puntajeText)
+
+        puntos.text = puntaje.toString()
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
@@ -51,6 +67,8 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
 
         mediaPlayer3.start()
         mediaPlayer3.isLooping
+
+        showRandomInstruccion()
 
         val victoria = findViewById<Button>(R.id.victoriaButton)
         victoria.setOnClickListener{
@@ -76,6 +94,12 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
         }
 
 
+    }
+
+    private fun showRandomInstruccion() {
+        val randomIndex = (0 until instrucciones.size).random()
+        val randomInstruction = instrucciones[randomIndex]
+        gesture.text = randomInstruction
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -113,12 +137,35 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
         velocityX: Float,
         velocityY: Float
     ): Boolean {
-        gesture.setText(R.string.desliza)
+
+        if(gesture.text == "Desliza!!")
+        {
+            gesture.setText(R.string.logro)
+            puntaje = puntaje + 1
+            puntos.text = puntaje.toString()
+            mediaPlayer.start()
+            scheduleRandomInstruction()
+        }else
+        {
+            gesture.setText(R.string.fallo)
+            mediaPlayer2.start()
+        }
         return true
     }
 
     override fun onLongPress(event: MotionEvent) {
-        gesture.setText(R.string.longpress)
+        if(gesture.text == "Manten precionado!!")
+        {
+            gesture.setText(R.string.logro)
+            puntaje = puntaje + 1
+            puntos.text = puntaje.toString()
+            mediaPlayer.start()
+            scheduleRandomInstruction()
+        }else
+        {
+            gesture.setText(R.string.fallo)
+            mediaPlayer2.start()
+        }
     }
 
     override fun onScroll(
@@ -145,19 +192,33 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
             val acceleration = Math.sqrt(x * x + y * y + z * z.toDouble()).toFloat()
 
             // You can adjust the acceleration threshold based on your needs
-            val threshold = 10.0f
+            val threshold = 15.0f
 
             if (acceleration > threshold) {
-                // Change the background color to black
-                square.setBackgroundColor(Color.RED)
+                if(gesture.text == "Agita!!")
+                {
+                    gesture.setText(R.string.logro)
+                    puntaje = puntaje + 1
+                    puntos.text = puntaje.toString()
+                    mediaPlayer.start()
+                    scheduleRandomInstruction()
+                }else
+                {
+                    gesture.setText(R.string.fallo)
+                    mediaPlayer2.start()
+                }
             } else {
-                // Change the background color to white
-                square.setBackgroundColor(Color.BLUE)
             }
         }
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
         return
+    }
+
+    private fun scheduleRandomInstruction() {
+        handler.postDelayed({
+            showRandomInstruccion()
+        }, 3000)
     }
 }

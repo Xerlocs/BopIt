@@ -43,10 +43,14 @@
 
     //texto ejemplo
     <string name="textoejemplo">Jugemos</string>
-    <string name="cuadrito">Giremos</string>
+    <string name="puntos">Puntos:</string>
 
     //texto gesture
     <string name="desliza">Deslizado</string>
     <string name="longpress">Presionando</string>
+
+    //texto acierto
+    <string name="logro">Correcto</string>
+    <string name="fallo">Fallaste</string>
 
 </resources>
