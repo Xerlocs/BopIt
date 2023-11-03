@@ -192,7 +192,7 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
             val acceleration = Math.sqrt(x * x + y * y + z * z.toDouble()).toFloat()
 
             // You can adjust the acceleration threshold based on your needs
-            val threshold = 15.0f
+            val threshold = 10.0f
 
             if (acceleration > threshold) {
                 if(gesture.text == "Agita!!")
