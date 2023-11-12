@@ -7,6 +7,15 @@
     android:background="@color/amarillo"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/azul_bonito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -23,47 +32,26 @@
         app:layout_constraintVertical_bias="0.119" />
 
     <Button
-        android:id="@+id/aboutButton"
-        android:layout_width="103dp"
-        android:layout_height="61dp"
-        android:text="@string/about"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.637" />
-
-    <Button
-        android:id="@+id/prefButton"
-        android:layout_width="149dp"
-        android:layout_height="62dp"
-        android:text="@string/preferencias"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutButton"
-        app:layout_constraintVertical_bias="0.279" />
-
-    <Button
         android:id="@+id/juegoButton"
-        android:layout_width="130dp"
-        android:layout_height="59dp"
+        android:layout_width="233dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="344dp"
         android:text="@string/juego"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/aboutButton"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="212dp"
         android:layout_height="264dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/bop_it_original_scream_and_drumoll" />
