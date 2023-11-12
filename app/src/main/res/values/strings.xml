@@ -13,7 +13,7 @@
     <string name="juego">Jugar</string>
 
     //texto
-    <string name="app_description">Hecho por Diego Valderrama. \nEste proyecto es uno piloto del juego BopIt para celular, hecho a partir de un proyecto de la Universidad de Talca</string>
+    <string name="app_description">Hecho por Diego Valderrama. \nEsta aplicacion trata de recrear el juego BopIt para celular</string>
     <string name="splash_info">Diego Valderrama \nXerlocs@yahoo.com</string>
 
     <string name="title_activity_settings">SettingsActivity</string>
@@ -36,18 +36,10 @@
     //Admin settings
     <string name="valores_title">¿Restablecer los valores predeterminados?</string>
 
-    //Sonidos
-    <string name="victoria">Sonido de victoria</string>
-    <string name="perder">Sonido de perder</string>
-    <string name="fondo">Pausar / Reanudar</string>
-
     //texto ejemplo
     <string name="textoejemplo">Jugemos</string>
     <string name="puntos">Puntos:</string>
-
-    //texto gesture
-    <string name="desliza">Deslizado</string>
-    <string name="longpress">Presionando</string>
+    <string name="puntosMax">Puntaje Maximo:</string>
 
     //texto acierto
     <string name="logro">Correcto</string>

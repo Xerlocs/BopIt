@@ -2,7 +2,6 @@ package cl.dv.bopit
 
 import android.content.Context
 import android.content.pm.ActivityInfo
-import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -37,8 +36,6 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
     private lateinit var puntos: TextView
     private var puntaje = 0
 
-    val randomNum = List(10) { Random.nextInt(0, 3) }
-
     private val instrucciones = listOf(
         "Desliza!!",
         "Agita!!",
@@ -51,7 +48,7 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
 
         mDetector = GestureDetectorCompat(this, this)
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.victory_theme)
+        mediaPlayer = MediaPlayer.create(this, R.raw.correct_sound)
         mediaPlayer2 = MediaPlayer.create(this, R.raw.lose_theme)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.relaxe_theme)
 
@@ -69,31 +66,6 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
         mediaPlayer3.isLooping
 
         showRandomInstruccion()
-
-        val victoria = findViewById<Button>(R.id.victoriaButton)
-        victoria.setOnClickListener{
-            if(!mediaPlayer.isPlaying){
-                mediaPlayer.start()
-            }
-        }
-
-        val derrota = findViewById<Button>(R.id.perderButton)
-        derrota.setOnClickListener{
-            if(!mediaPlayer2.isPlaying){
-                mediaPlayer2.start()
-            }
-        }
-
-        val fondo = findViewById<Button>(R.id.fondoButton)
-        fondo.setOnClickListener{
-            if(!mediaPlayer3.isPlaying){
-                mediaPlayer3.start()
-            }else{
-                mediaPlayer3.pause()
-            }
-        }
-
-
     }
 
     private fun showRandomInstruccion() {

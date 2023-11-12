@@ -7,51 +7,18 @@
     android:background="@color/amarillo"
     tools:context=".Juego">
 
-  <Button
-      android:id="@+id/victoriaButton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="636dp"
-      android:text="@string/victoria"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.064"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-  <Button
-      android:id="@+id/perderButton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="636dp"
-      android:text="@string/perder"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.937"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-  <Button
-      android:id="@+id/fondoButton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="28dp"
-      android:text="@string/fondo"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.528"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
   <TextView
       android:id="@+id/gestureText"
       android:layout_width="414dp"
       android:layout_height="106dp"
-      android:layout_marginTop="184dp"
+      android:layout_marginTop="100dp"
       android:text="@string/textoejemplo"
       android:textAlignment="center"
       android:textColor="@color/azul_bonito"
       android:textSize="40sp"
       android:textStyle="bold"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.496"
+      app:layout_constraintHorizontal_bias="0.666"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,13 +26,13 @@
       android:id="@+id/pText"
       android:layout_width="150dp"
       android:layout_height="75dp"
-      android:layout_marginTop="108dp"
+      android:layout_marginTop="16dp"
       android:text="@string/puntos"
       android:textAlignment="center"
       android:textColor="@color/azul_bonito"
       android:textSize="40sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.681"
+      app:layout_constraintHorizontal_bias="0.245"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,14 +40,14 @@
       android:id="@+id/puntajeText"
       android:layout_width="150dp"
       android:layout_height="75dp"
-      android:layout_marginTop="108dp"
+      android:layout_marginTop="16dp"
       android:textAlignment="center"
       android:textColor="@color/azul_bonito"
       android:textSize="40sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.681"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toEndOf="@+id/pText"
       app:layout_constraintTop_toTopOf="parent"
-      tools:text="hola"/>
+      tools:text="hola" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
