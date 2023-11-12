@@ -50,4 +50,14 @@
       app:layout_constraintTop_toTopOf="parent"
       tools:text="hola" />
 
+  <ImageView
+      android:id="@+id/verificador"
+      android:layout_width="193dp"
+      android:layout_height="232dp"
+      android:layout_marginTop="52dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/gestureText"
+      app:srcCompat="@drawable/neutral" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

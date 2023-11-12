@@ -14,6 +14,7 @@ import android.os.Looper
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.GestureDetectorCompat
 import kotlin.random.Random
@@ -26,10 +27,14 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
 
     private lateinit var mDetector: GestureDetectorCompat
 
+    private lateinit var isaac: ImageView
+
     private lateinit var gesture: TextView
 
     private var sensorManager: SensorManager? = null
     private var accelerometer: Sensor? = null
+
+    private var agitado: Boolean = false
 
     private val handler = Handler(Looper.getMainLooper())
 
@@ -51,6 +56,8 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
         mediaPlayer = MediaPlayer.create(this, R.raw.correct_sound)
         mediaPlayer2 = MediaPlayer.create(this, R.raw.lose_theme)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.relaxe_theme)
+
+        isaac = findViewById(R.id.verificador)
 
         gesture = findViewById(R.id.gestureText) //Intrucciones
         puntos = findViewById(R.id.puntajeText)
@@ -116,11 +123,13 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
             puntaje = puntaje + 1
             puntos.text = puntaje.toString()
             mediaPlayer.start()
+            isaac.setImageResource(R.drawable.correcto)
             scheduleRandomInstruction()
         }else
         {
             gesture.setText(R.string.fallo)
             mediaPlayer2.start()
+            isaac.setImageResource(R.drawable.fallaste)
         }
         return true
     }
@@ -133,10 +142,12 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
             puntos.text = puntaje.toString()
             mediaPlayer.start()
             scheduleRandomInstruction()
+            isaac.setImageResource(R.drawable.correcto)
         }else
         {
             gesture.setText(R.string.fallo)
             mediaPlayer2.start()
+            isaac.setImageResource(R.drawable.fallaste)
         }
     }
 
@@ -169,15 +180,18 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
             if (acceleration > threshold) {
                 if(gesture.text == "Agita!!")
                 {
+                    agitado = true
                     gesture.setText(R.string.logro)
                     puntaje = puntaje + 1
                     puntos.text = puntaje.toString()
                     mediaPlayer.start()
+                    isaac.setImageResource(R.drawable.correcto)
                     scheduleRandomInstruction()
-                }else
+                }else if(agitado == false)
                 {
                     gesture.setText(R.string.fallo)
                     mediaPlayer2.start()
+                    isaac.setImageResource(R.drawable.fallaste)
                 }
             } else {
             }
@@ -190,6 +204,8 @@ class Juego : AppCompatActivity(), GestureDetector.OnGestureListener, SensorEven
 
     private fun scheduleRandomInstruction() {
         handler.postDelayed({
+            agitado = false
+            isaac.setImageResource(R.drawable.neutral)
             showRandomInstruccion()
         }, 3000)
     }
