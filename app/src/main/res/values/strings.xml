@@ -11,6 +11,7 @@
     <string name="preferencias">Preferencias</string>
     <string name="regresar">Regresar</string>
     <string name="juego">Jugar</string>
+    <string name="replay">Jugar de nuevo</string>
 
     //texto
     <string name="app_description">Hecho por Diego Valderrama. \nEsta aplicacion trata de recrear el juego BopIt para celular</string>
