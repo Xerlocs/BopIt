@@ -17,6 +17,14 @@
     <PreferenceCategory app:title="@string/Personalizar_header">
 
         <ListPreference
+            app:defaultValue="5000"
+            app:entries="@array/dificultad_entries"
+            app:entryValues="@array/dificultad_values"
+            app:key="dificulty"
+            app:title="@string/dificultad_tittle"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
             app:defaultValue="reply"
             app:entries="@array/color_entries"
             app:entryValues="@array/reply_values"

@@ -28,6 +28,7 @@
     <string name="puntaje_title">Guardar puntaje mas alto</string>
 
     //Personalizar settings
+    <string name="dificultad_tittle">Dificultad del juego</string>
     <string name="color_title">Color del juego</string>
     <string name="volumen_title">Volumen del juego</string>
     <string name="intrucciones_title">Mostrar intrucciones</string>

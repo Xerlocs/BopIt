@@ -1,4 +1,17 @@
 <resources>
+    <!-- dificultad Preference -->
+    <string-array name="dificultad_entries">
+        <item>Facil</item>
+        <item>Medio</item>
+        <item>Dificil</item>
+    </string-array>
+
+    <string-array name="dificultad_values">
+        <item>10000</item>
+        <item>5000</item>
+        <item>3000</item>
+    </string-array>
+
     <!-- color Preference -->
     <string-array name="color_entries">
         <item>Claro</item>
