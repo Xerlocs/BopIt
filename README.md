@@ -20,4 +20,4 @@ La cuarta version es tecnicamente la ultima, en esta se limpio el juego para que
 
 Como un extra se agregaron unas imagenes en el juego para mostrar mejor visualmente cuando el jugador acierta y cuando falla.
 
-Link video: https://youtu.be/OvjAAJtwkPA
+Link video: https://youtu.be/DFrfdhv1GaA
