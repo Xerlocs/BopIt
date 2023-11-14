@@ -17,6 +17,7 @@ En la tercera version del juego, se agrego un poco de jugabilidad, es necesario 
 **Cuarta Version**
 
 La cuarta version es tecnicamente la ultima, en esta se limpio el juego para que tenga lo necesario y eliminar las string y audios innecesarios, aparte de eliminar abundancia de botonos usando una toolbar para ingresar al About y a las Preferencias. Tambien se hizo que el juego tuviese un tiempo para realizar las acciones y se muestra la puntuacion maxima y se actualiza cuando esta es superada, aparte de esto se agrego un boton para volver a jugar cuando el jugador pierde, volviendose visible al perder e invisible al estar jugando.
+
 Como un extra se agregaron unas imagenes en el juego para mostrar mejor visualmente cuando el jugador acierta y cuando falla.
 
 Link video: https://youtu.be/OvjAAJtwkPA
